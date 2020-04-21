@@ -12,24 +12,14 @@ body{
 }
 
 .flex-container   {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-
-  /* max-width: 1200px;
-  margin: 20px auto;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center */
+ 
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 15px;
+    margin: auto;
+    margin-top: auto;
+    padding: auto;
 
-    /* justify-content: space-between; */
-    /* flex-direction: column; */
-    /* align-items: center; */
 }
 
 @media (prefers-reduced-motion: no-preference) {
