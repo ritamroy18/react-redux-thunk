@@ -3,6 +3,7 @@ import { FETCH_POSTS_REQUEST,NEW_POSTS } from '../actions/types'
 const initialState = {
     items : [],
     loading : false,
+    page: 1
 }
 
 
