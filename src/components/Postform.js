@@ -35,7 +35,7 @@ export class PostForm extends Component {
                         this.props.posts.map((post, i) =>
                         //  <h3 key={i}>{post.id}-{post.title}</h3>
                         // <div style={{ width: '100%' }}  key={i}>
-                        <div  key={i}>
+                        <div className="content" key={i}>
                          {<img  
                          src = {post.urls['small']} />}
                         </div>
