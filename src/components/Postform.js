@@ -7,6 +7,8 @@ import logo from '../images/logo.svg';
 import minilogo from '../images/logo512.png';
 import Box from '@material-ui/core/Box';
 import { flexbox } from '@material-ui/system';
+// import '../components/Postform.css';
+import '../App.css';
 
 export class PostForm extends Component {
 
@@ -27,24 +29,29 @@ export class PostForm extends Component {
         return (
             <div>
                 <h2>Image Gallery</h2>
+                <div className="flex-container" >
                     {
+                       
                         this.props.posts.map((post, i) =>
                         //  <h3 key={i}>{post.id}-{post.title}</h3>
-                        // <div style={{ width: '100%' }}>
-                         <Box   alignItems="flex-start" p={1} m={1}
-                                key={i}>
-                         {<img  alignItems="flex-start" src = {post.urls['small']} />}
-                         </Box>
+                        // <div style={{ width: '100%' }}  key={i}>
+                        <div  key={i}>
+                         {<img  
+                         src = {post.urls['small']} />}
+                        </div>
+                        //  </Box>
                         //  </div>
                          )
+                       
                      }
+                     </div>
                    
                         {!this.props.loading &&
                         // <button className="btn btn-primary"  onClick={this.showMore}>Show more</button>
-                        <img src={minilogo} height="200px" width="200px" alt="Show More" onClick={this.showMore} />
+                        <img src={minilogo} height="100px" width="100px" alt="Show More" onClick={this.showMore} />
                         }                        
  
-                     {this.props.loading && <img src = {logo} height="500" width="300"  className = "App-logo"/>}
+                     {this.props.loading && <img src = {logo} height="200" width="200"  className = "App-logo"/>}
             </div>
         )
     }
