@@ -1,8 +1,9 @@
 import {combineReducers} from 'redux'
 import postReducer from './postReducer'
-
+import loadReducer from './loadReducer'
 export default combineReducers({
-    posts : postReducer
+    posts : postReducer,
+    loading : loadReducer
 })
 
 // const rootReducers = combineReducers({

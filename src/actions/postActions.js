@@ -7,7 +7,6 @@ export const  fetchPostsRequest = () =>{
 
 
 export const newPosts = (data) => {
-    console.log(data.posts)
     return (dispatch) => {
         dispatch(fetchPostsRequest())
         // setTimeout(() =>{

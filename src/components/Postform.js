@@ -17,12 +17,15 @@ export class PostForm extends Component {
     showMore = () => {
         const { posts, newPosts } = this.props;
         // update the post page
-        newPosts(posts.page);
+        const pageNumber = posts.page;
+        // newPosts(posts.page);
+        newPosts(pageNumber);
     }
 
     render() {
       const { posts, loading } = this.props;
-
+      console.log(this.props)
+      
         return (
             <div>
                 <h2>Image Gallery</h2>
@@ -47,11 +50,13 @@ export class PostForm extends Component {
 }
 const mapStateToProps = ({ posts, loading }) => ({
     posts,
-    loading: loading || posts.loading
+    // loading: loading || posts.loading
+    loading: loading 
+
 });
 
 const mapDispatchToProps = dispatch => ({
-    newPosts: postLength => dispatch(newPosts({ posts: postLength, val: 10}))
+    newPosts: pageNumber => dispatch(newPosts({ posts: pageNumber, val: 10}))
     
 });
 

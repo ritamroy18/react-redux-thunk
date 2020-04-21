@@ -20,7 +20,8 @@ export default function (state = initialState,action){
         case NEW_POSTS : return{
             ...state,
             loading : false,
-            items : [...state.items,...action.payload]
+            items : [...state.items,...action.payload],
+            page : state.page + 1
         }
 
         default :
