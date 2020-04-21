@@ -4,14 +4,7 @@ import { fetchPosts,newPosts } from '../actions/postActions'
 
 export class PostForm extends Component {
 
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-            itemsToShow : 10,
-        }
-    }
-    
+
     componentDidMount(){
         this.props.fetchPosts();
         // this.props.newPosts();
