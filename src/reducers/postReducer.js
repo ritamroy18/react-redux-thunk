@@ -13,7 +13,7 @@ export default function (state = initialState,action){
         }
         case NEW_POSTS : return{
             ...state,
-            items : this.state.items+action.payload
+            items : [...state.items,...action.payload]
         }
         default :
         return state;
