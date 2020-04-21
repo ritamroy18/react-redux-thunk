@@ -15,7 +15,7 @@ export class PostForm extends Component {
     }
 
     render() {
-        console.log(this.props.posts.length)
+        // console.log(this.props.posts.length)
      
         return (
             <div>
@@ -48,15 +48,4 @@ const mapDispatchToProps = dispatch => {
     }    
 }
 
-
-// function mapDispatchToProps(dispatch, ownProps) {
-//     return {
-//         fetchPosts: () => dispatch(fetchPosts()),
-//         newPosts: (props) => {
-//             dispatch(newPosts({posts: this.props.posts.length, val: 10}));
-//         }
-//     }
-// }
-
-// export default PostForm
 export default connect(mapStateToProps, mapDispatchToProps)(PostForm);
