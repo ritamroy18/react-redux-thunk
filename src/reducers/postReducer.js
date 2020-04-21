@@ -1,20 +1,27 @@
-import { FETCH_POSTS,NEW_POSTS } from '../actions/types'
+import { FETCH_POSTS_REQUEST,NEW_POSTS } from '../actions/types'
 
 const initialState = {
-    items : []
+    items : [],
+    loading : false,
 }
 
 
 export default function (state = initialState,action){
     switch(action.type){
-        case FETCH_POSTS : return{
+        case FETCH_POSTS_REQUEST : return{
             ...state,
-            items : action.payload
+            loading : true
         }
+        // case FETCH_POSTS : return{
+        //     ...state,
+        //     items : action.payload
+        // }
         case NEW_POSTS : return{
             ...state,
+            loading : false,
             items : [...state.items,...action.payload]
         }
+
         default :
         return state;
     }
