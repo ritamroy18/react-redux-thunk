@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { newPosts } from '../actions/postActions'
-
-import logo from '../images/logo.svg';
-import minilogo from '../images/logo512.png';
 // import '../components/Postform.css';
 import '../App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+
 
 export class PostForm extends Component {
 
@@ -15,7 +15,7 @@ export class PostForm extends Component {
     }
 
     showMore = () => {
-        const { posts, newPosts } = this.props;
+        const { posts, newPosts ,loading} = this.props;
         // update the post page
         const pageNumber = posts.page;
         // newPosts(posts.page);
@@ -24,7 +24,6 @@ export class PostForm extends Component {
 
     render() {
       const { posts, loading } = this.props;
-      console.log(this.props)
       
         return (
             <div>
@@ -38,12 +37,13 @@ export class PostForm extends Component {
                         )
                      }
                      </div>
-
+ 
                       {
-                        !loading
-                        ? <img src={minilogo} height="100px" width="100px" alt="Show More" onClick={this.showMore} />
-                        : <img src={logo} height="200px" width="200px" className="App-logo"/>
-                      }
+                        !loading.loading
+                        ? <FontAwesomeIcon icon={faSpinner} size="2x" onClick={this.showMore} />
+                        : <FontAwesomeIcon icon={faSpinner} size="2x" rotation={90} />
+                      } 
+
             </div>
         )
     }
@@ -51,7 +51,7 @@ export class PostForm extends Component {
 const mapStateToProps = ({ posts, loading }) => ({
     posts,
     // loading: loading || posts.loading
-    loading: loading 
+    loading 
 
 });
 
