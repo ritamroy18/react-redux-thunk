@@ -35,8 +35,9 @@ export class PostForm extends Component {
                 <div className="content">
                     <section className="grid">
                         {
+                            
                             posts.items.map((post, i) =>
-                                <div data-key="{post.id}" className={post.height <= post.width ? 'item item-1' : 'item item-2'}>
+                                <div data-key={post.id} className={post.height <= post.width ? 'item item-1' : 'item item-2'}>
                                     <img src={post.urls['small']} />
                                 </div>
                             )
